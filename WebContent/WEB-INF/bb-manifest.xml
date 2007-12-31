@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<manifest>
+	<plugin>
+		<name value="Google Calendar Integration"></name>
+		<handle value="google-calendar"></handle>
+		<description
+			value="This extension adds a module which displays both Google and Blackboard calendar events.">
+		</description>
+		<version value="1.0"></version>
+		<requires>
+			<bbversion value="7.0.0"></bbversion>
+		</requires>
+		<vendor>
+			<id value="bbdn"></id>
+			<name value="Blackboard Developers Network"></name>
+			<url value="http://www.edugarage.com"></url>
+			<description value="Blackboard"></description>
+		</vendor>
+		<http-actions></http-actions>
+		<module-defs>
+			<module-type ext-ref="MyGoogleCalendar-Integration"
+				title="Google Calendar Module" uicreatable="true">
+				<jsp-dir>jsp/module</jsp-dir>
+				<jsp>
+					<view>view.jsp</view>
+					<edit>edit.jsp</edit>
+				</jsp>
+			</module-type>
+			<module type="MyGoogleCalendar-Integration" isadmin="false"
+				useraddable="true" isdeletable="true" title="My Google Calendar">
+				<description>Google Calendar integration</description>
+				<ExtraInfo>
+					<property key="" type=""></property>
+				</ExtraInfo>
+			</module>
+		</module-defs>
+		<permissions>
+			<permission type="attribute" name="user.authinfo" actions="get" />
+			<permission type="attribute" name="user.personalinfo" actions="get" />
+			<permission type="socket" name="*" actions="resolve,connect" />
+			<permission type="java.security.SecurityPermission" name="*" actions="getPolicy" />
+			<permission type="persist" name="Announcement" actions="create,modify,delete" />
+			<permission type="persist" name="CalendarEntry"	actions="create,modify,delete" />
+			<permission type="persist" name="Content" actions="create,modify,delete" />
+			<permission type="java.net.NetPermission" name="getCookieHandler" actions="getCookieHandler" />
+			<permission type="java.net.NetPermission" name="setCookieHandler" actions="setCookieHandler" />
+			<permission type="java.net.NetPermission" name="setDefaultAuthenticator" actions="setDefaultAuthenticator" />
+			<permission type="java.net.NetPermission" name="specifyStreamHandler" actions="specifyStreamHandler" />
+			<permission type="java.lang.RuntimePermission" name="setFactory" actions="setFactory" />
+			<permission type="java.lang.RuntimePermission" name="accessDeclaredMembers" actions="accessDeclaredMembers" />
+			<permission type="java.lang.RuntimePermission" name="createClassLoader" actions="createClassLoader" />
+			<permission type="java.lang.RuntimePermission" name="getClassLoader" actions="getClassLoader" />
+			<permission type="java.lang.RuntimePermission" name="setContextClassLoader" actions="setContextClassLoader" />
+			<permission type="java.lang.RuntimePermission" name="modifyThreadGroup" actions="modifyThreadGroup" />
+			<permission type="java.lang.RuntimePermission" name="createSecurityManager" actions="createSecurityManager" />
+			<permission type="java.util.PropertyPermission " name="http.strictPostRedirect" actions="write" />
+			
+			
+		</permissions>
+	</plugin>
+</manifest>
